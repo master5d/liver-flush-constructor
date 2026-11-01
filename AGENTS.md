@@ -11,10 +11,13 @@ https://master5d.github.io/liver-flush-constructor/. Общий контракт
 1. Не медицинская рекомендация — дисклеймер и статус доказательности шагов не убирать; уровни A5–A7 остаются с отсылкой к врачу.
 2. Цвета и кегли — токенами `:root` (desops), сырые `#fff`/`#000` не возвращать.
 3. Медицинские правила лаборатории — память `project_wellbeing_emr` (открыть перед правкой содержания).
+4. Иконки: исходник — `icon.svg` (цвета — токены `:root` страницы); `favicon.ico` (16/32/48) и `apple-touch-icon.png`
+   (180×180, без прозрачности — углы iOS скругляет сам) растрируются из него. В XML-комментарии SVG нельзя `--`:
+   с ним файл не разбирается, и браузер молча остаётся без иконки. Сборщик `<head>` не трогает.
 
 ## Проверка
 
 ```
-pwsh C:\telo\Efforts\Ongoing\NAUTILUS\core\desops\scripts\lint-design.ps1 index.html    # ожидание 0 находок
+pwsh C:\telo\Efforts\Ongoing\NAUTILUS\core\desops\scripts\lint-design.ps1 -Path C:\telo\Efforts\Ongoing\liver-flush-constructor    # ожидание 0 находок; путь к файлу — rc 2
 ```
 Содержание — открыть `index.html` в браузере, пройти конструктор до плана.
